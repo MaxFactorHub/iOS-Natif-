@@ -7,15 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2D27C82C692A834859B470 /* Pods_iOS_Natif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63624E148952D3E370FA5916 /* Pods_iOS_Natif.framework */; };
+		B90F3AA927C2783700BC4653 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F3AA827C2783700BC4653 /* MainView.swift */; };
+		B90F3AAF27C2911400BC4653 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F3AAE27C2911400BC4653 /* OpenWeather.swift */; };
+		B90F3AB127C29BFE00BC4653 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F3AB027C29BFE00BC4653 /* LocationManager.swift */; };
+		B90F3AB627C2B69E00BC4653 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F3AB527C2B69E00BC4653 /* CollectionView.swift */; };
+		B90F3AB827C2B9AF00BC4653 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F3AB727C2B9AF00BC4653 /* TableView.swift */; };
+		B90F3AC227C37E9300BC4653 /* MapСoordinatesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90F3AC127C37E9300BC4653 /* MapСoordinatesDelegate.swift */; };
+		B90F3ACC27C3A4F700BC4653 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90F3ACA27C3A4F700BC4653 /* CollectionCell.xib */; };
 		B99E108727BD086D000FE418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E108627BD086D000FE418 /* AppDelegate.swift */; };
 		B99E108927BD086D000FE418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E108827BD086D000FE418 /* SceneDelegate.swift */; };
 		B99E108B27BD086D000FE418 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E108A27BD086D000FE418 /* ViewController.swift */; };
 		B99E108E27BD086D000FE418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99E108C27BD086D000FE418 /* Main.storyboard */; };
 		B99E109027BD0874000FE418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99E108F27BD0874000FE418 /* Assets.xcassets */; };
 		B99E109327BD0874000FE418 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99E109127BD0874000FE418 /* LaunchScreen.storyboard */; };
+		B99E109B27BD0B33000FE418 /* OpenWeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E109A27BD0B33000FE418 /* OpenWeatherApi.swift */; };
+		B99E109E27BD412C000FE418 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E109C27BD412B000FE418 /* CollectionCell.swift */; };
+		B99E10A227BD4DB5000FE418 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E10A027BD4DB5000FE418 /* TableCell.swift */; };
+		B99E10A327BD4DB5000FE418 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99E10A127BD4DB5000FE418 /* TableCell.xib */; };
+		B99E10A527BE1DA0000FE418 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E10A427BE1D9F000FE418 /* FindViewController.swift */; };
+		B99E10A727BE38D2000FE418 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E10A627BE38D2000FE418 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63624E148952D3E370FA5916 /* Pods_iOS_Natif.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Natif.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		640A17BA0676FCB966B33910 /* Pods-iOS-Natif.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Natif.release.xcconfig"; path = "Target Support Files/Pods-iOS-Natif/Pods-iOS-Natif.release.xcconfig"; sourceTree = "<group>"; };
+		B90F3AA827C2783700BC4653 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B90F3AAE27C2911400BC4653 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
+		B90F3AB027C29BFE00BC4653 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B90F3AB527C2B69E00BC4653 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		B90F3AB727C2B9AF00BC4653 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		B90F3AC127C37E9300BC4653 /* MapСoordinatesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapСoordinatesDelegate.swift"; sourceTree = "<group>"; };
+		B90F3ACA27C3A4F700BC4653 /* CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 		B99E108327BD086D000FE418 /* iOS-Natif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Natif.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99E108627BD086D000FE418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B99E108827BD086D000FE418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +47,13 @@
 		B99E108F27BD0874000FE418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B99E109227BD0874000FE418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B99E109427BD0874000FE418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B99E109A27BD0B33000FE418 /* OpenWeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherApi.swift; sourceTree = "<group>"; };
+		B99E109C27BD412B000FE418 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		B99E10A027BD4DB5000FE418 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		B99E10A127BD4DB5000FE418 /* TableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
+		B99E10A427BE1D9F000FE418 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		B99E10A627BE38D2000FE418 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DBF4302574AB40B59E3189B9 /* Pods-iOS-Natif.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Natif.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Natif/Pods-iOS-Natif.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +61,84 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2D27C82C692A834859B470 /* Pods_iOS_Natif.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		664F84647E425F95E32463F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63624E148952D3E370FA5916 /* Pods_iOS_Natif.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A57F191C2CE2F0DD902A8E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBF4302574AB40B59E3189B9 /* Pods-iOS-Natif.debug.xcconfig */,
+				640A17BA0676FCB966B33910 /* Pods-iOS-Natif.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B90F3AAC27C28F6000BC4653 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B90F3AA827C2783700BC4653 /* MainView.swift */,
+				B90F3AB527C2B69E00BC4653 /* CollectionView.swift */,
+				B99E109C27BD412B000FE418 /* CollectionCell.swift */,
+				B90F3ACA27C3A4F700BC4653 /* CollectionCell.xib */,
+				B90F3AB727C2B9AF00BC4653 /* TableView.swift */,
+				B99E10A027BD4DB5000FE418 /* TableCell.swift */,
+				B99E10A127BD4DB5000FE418 /* TableCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B90F3AAD27C2910700BC4653 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B90F3AAE27C2911400BC4653 /* OpenWeather.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B90F3AB227C2B4FC00BC4653 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B99E108A27BD086D000FE418 /* ViewController.swift */,
+				B90F3AAC27C28F6000BC4653 /* Views */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		B90F3AB327C2B56000BC4653 /* MapScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B99E10A627BE38D2000FE418 /* MapViewController.swift */,
+			);
+			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		B90F3AB427C2B58B00BC4653 /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B99E10A427BE1D9F000FE418 /* FindViewController.swift */,
+			);
+			path = SearchScreen;
+			sourceTree = "<group>";
+		};
 		B99E107A27BD086D000FE418 = {
 			isa = PBXGroup;
 			children = (
 				B99E108527BD086D000FE418 /* iOS-Natif */,
 				B99E108427BD086D000FE418 /* Products */,
+				8A57F191C2CE2F0DD902A8E6 /* Pods */,
+				664F84647E425F95E32463F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +155,13 @@
 			children = (
 				B99E108627BD086D000FE418 /* AppDelegate.swift */,
 				B99E108827BD086D000FE418 /* SceneDelegate.swift */,
-				B99E108A27BD086D000FE418 /* ViewController.swift */,
+				B90F3AB027C29BFE00BC4653 /* LocationManager.swift */,
+				B99E109A27BD0B33000FE418 /* OpenWeatherApi.swift */,
+				B90F3AC127C37E9300BC4653 /* MapСoordinatesDelegate.swift */,
+				B90F3AAD27C2910700BC4653 /* Model */,
+				B90F3AB327C2B56000BC4653 /* MapScreen */,
+				B90F3AB427C2B58B00BC4653 /* SearchScreen */,
+				B90F3AB227C2B4FC00BC4653 /* MainScreen */,
 				B99E108C27BD086D000FE418 /* Main.storyboard */,
 				B99E108F27BD0874000FE418 /* Assets.xcassets */,
 				B99E109127BD0874000FE418 /* LaunchScreen.storyboard */,
@@ -74,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B99E109727BD0874000FE418 /* Build configuration list for PBXNativeTarget "iOS-Natif" */;
 			buildPhases = (
+				CBC485CE478425B7BF49168C /* [CP] Check Pods Manifest.lock */,
 				B99E107F27BD086D000FE418 /* Sources */,
 				B99E108027BD086D000FE418 /* Frameworks */,
 				B99E108127BD086D000FE418 /* Resources */,
+				EC37975F7F878BADB744B48C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,20 +232,75 @@
 			files = (
 				B99E109327BD0874000FE418 /* LaunchScreen.storyboard in Resources */,
 				B99E109027BD0874000FE418 /* Assets.xcassets in Resources */,
+				B90F3ACC27C3A4F700BC4653 /* CollectionCell.xib in Resources */,
 				B99E108E27BD086D000FE418 /* Main.storyboard in Resources */,
+				B99E10A327BD4DB5000FE418 /* TableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CBC485CE478425B7BF49168C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-Natif-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC37975F7F878BADB744B48C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-Natif/Pods-iOS-Natif-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-Natif/Pods-iOS-Natif-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Natif/Pods-iOS-Natif-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B99E107F27BD086D000FE418 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B99E10A227BD4DB5000FE418 /* TableCell.swift in Sources */,
+				B90F3AA927C2783700BC4653 /* MainView.swift in Sources */,
 				B99E108B27BD086D000FE418 /* ViewController.swift in Sources */,
+				B90F3AC227C37E9300BC4653 /* MapСoordinatesDelegate.swift in Sources */,
 				B99E108727BD086D000FE418 /* AppDelegate.swift in Sources */,
+				B99E109B27BD0B33000FE418 /* OpenWeatherApi.swift in Sources */,
 				B99E108927BD086D000FE418 /* SceneDelegate.swift in Sources */,
+				B90F3AB627C2B69E00BC4653 /* CollectionView.swift in Sources */,
+				B99E10A527BE1DA0000FE418 /* FindViewController.swift in Sources */,
+				B90F3AB827C2B9AF00BC4653 /* TableView.swift in Sources */,
+				B90F3AB127C29BFE00BC4653 /* LocationManager.swift in Sources */,
+				B90F3AAF27C2911400BC4653 /* OpenWeather.swift in Sources */,
+				B99E109E27BD412C000FE418 /* CollectionCell.swift in Sources */,
+				B99E10A727BE38D2000FE418 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +444,7 @@
 		};
 		B99E109827BD0874000FE418 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBF4302574AB40B59E3189B9 /* Pods-iOS-Natif.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,6 +452,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS-Natif/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Load current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Load current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -311,6 +474,7 @@
 		};
 		B99E109927BD0874000FE418 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 640A17BA0676FCB966B33910 /* Pods-iOS-Natif.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +482,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS-Natif/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Load current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Load current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

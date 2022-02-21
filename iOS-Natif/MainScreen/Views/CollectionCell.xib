@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="KIS-uE-nE3" customClass="CollectionCell" customModule="iOS_Natif" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbJ-MV-WAz">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="150"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="api-5l-Krv">
+                        <rect key="frame" x="8" y="112" width="65" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="2Cr-jc-mfO"/>
+                            <constraint firstAttribute="width" constant="65" id="hJO-zi-kT9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_my_location" translatesAutoresizingMaskIntoConstraints="NO" id="zaf-To-UEz">
+                        <rect key="frame" x="27.5" y="85" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="PU9-D8-Kev"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo8-zg-rVf">
+                        <rect key="frame" x="7.5" y="21" width="65" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="7n1-k0-9yX"/>
+                            <constraint firstAttribute="width" constant="65" id="jIb-zp-h3W"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="api-5l-Krv" firstAttribute="top" secondItem="zaf-To-UEz" secondAttribute="bottom" constant="2" id="07T-aK-SCR"/>
+                    <constraint firstItem="zaf-To-UEz" firstAttribute="centerX" secondItem="gbJ-MV-WAz" secondAttribute="centerX" id="0lQ-vH-NIu"/>
+                    <constraint firstItem="zaf-To-UEz" firstAttribute="top" secondItem="Yo8-zg-rVf" secondAttribute="bottom" constant="34" id="3IV-VF-VyC"/>
+                    <constraint firstAttribute="height" constant="150" id="8Us-kf-FaN"/>
+                    <constraint firstItem="Yo8-zg-rVf" firstAttribute="centerX" secondItem="gbJ-MV-WAz" secondAttribute="centerX" id="AJN-gP-dJ0"/>
+                    <constraint firstAttribute="trailing" secondItem="api-5l-Krv" secondAttribute="trailing" constant="7" id="PUz-gr-YW1"/>
+                    <constraint firstItem="api-5l-Krv" firstAttribute="leading" secondItem="gbJ-MV-WAz" secondAttribute="leading" constant="8" id="Qgh-4p-Sl7"/>
+                    <constraint firstAttribute="bottom" secondItem="api-5l-Krv" secondAttribute="bottom" constant="8" id="x5u-j1-jy7"/>
+                    <constraint firstItem="Yo8-zg-rVf" firstAttribute="top" secondItem="gbJ-MV-WAz" secondAttribute="top" constant="21" id="yws-EU-V66"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <constraints>
+                <constraint firstItem="gbJ-MV-WAz" firstAttribute="leading" secondItem="KIS-uE-nE3" secondAttribute="leading" id="SfC-nD-Dtl"/>
+                <constraint firstItem="gbJ-MV-WAz" firstAttribute="top" secondItem="KIS-uE-nE3" secondAttribute="top" id="hJb-Z2-Mmn"/>
+            </constraints>
+            <size key="customSize" width="80" height="150"/>
+            <connections>
+                <outlet property="bottomLabel" destination="api-5l-Krv" id="7J2-er-tX2"/>
+                <outlet property="middleView" destination="zaf-To-UEz" id="w4P-az-0az"/>
+                <outlet property="topLabel" destination="Yo8-zg-rVf" id="cbq-ef-POx"/>
+            </connections>
+            <point key="canvasLocation" x="231.8840579710145" y="68.303571428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_my_location" width="22" height="22"/>
+    </resources>
+</document>
