@@ -10,21 +10,15 @@ import CoreLocation
 import MapKit
 
 class MapViewController: UIViewController {
-    
-    private func addAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay!", style: .destructive, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+
     // MARK: - Variables
     private var touchCoordinates: (latitude: CLLocationDegrees, longitude: CLLocationDegrees)?
     @IBOutlet private weak var mapView: MKMapView!
     private var coordinatePoint: MKPointAnnotation?
     weak var delegate: MapСoordinatesDelegate?
-        
+
     // MARK: - mapViewTapped
-    @objc func mapViewTapped(_ recognizer: UITapGestureRecognizer) {
+    @objc private func mapViewTapped(_ recognizer: UITapGestureRecognizer) {
         if recognizer.view is MKMapView && recognizer.state == .began {
                 let touchPoint = recognizer.location(in: mapView)
             let coordinates = getMapCoordinates(from: touchPoint)
@@ -33,16 +27,18 @@ class MapViewController: UIViewController {
             addAlert(message: "Data has been sent to the Home Screen")
         }
     }
-    
+
     // MARK: - showUserCoordinates
     private func showUserCoordinates(_ location: CLLocation) {
-        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
         setMapAnnotation(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
-    
+
     // MARK: - setMapAnnotation
     private func setMapAnnotation(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let annotation = MKPointAnnotation()
@@ -51,7 +47,7 @@ class MapViewController: UIViewController {
         coordinatePoint = annotation
         mapView.addAnnotation(annotation)
     }
-     
+
     // MARK: - updateAnnotationCoordinates
     private func updateAnnotationCoordinates(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -59,14 +55,20 @@ class MapViewController: UIViewController {
         mapView.removeAnnotations(annotations)
         setMapAnnotation(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
-    
     // MARK: - getMapCoordinates
     private func getMapCoordinates(from touchPoint: CGPoint) -> (latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let location = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        print ("Tap coordinates: \(location.latitude), \(location.longitude)")
+        print("Tap coordinates: \(location.latitude), \(location.longitude)")
         return (latitude: location.latitude, longitude: location.longitude)
     }
-        
+
+    // MARK: - addAlert
+    private func addAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay!", style: .destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +82,7 @@ class MapViewController: UIViewController {
         let message = "Use UILongPressGestureRecognizer\nminimumPressDuration = 1"
         addAlert(message: message)
     }
-        
+
     // MARK: - viewWillDisappear
     override func viewWillDisappear(_ animated: Bool) {
         delegate?.updateCoordinates()
@@ -90,7 +92,7 @@ class MapViewController: UIViewController {
 // MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Swift.Error) { fatalError() }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             manager.stopUpdatingLocation()
@@ -98,6 +100,3 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
 }
-
-
-

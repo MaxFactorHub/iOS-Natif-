@@ -8,6 +8,6 @@
 import Foundation
 
 protocol MapСoordinatesDelegate: AnyObject {
-    func getCoordinates(latitude: Double , longitude: Double)
+    func getCoordinates(latitude: Double, longitude: Double)
     func updateCoordinates()
 }

@@ -8,31 +8,37 @@
 import Foundation
 
 struct OpenWeather {
-    
+
+    // MARK: - Variables
     private static var data: Welcome!
-    
+
+    // MARK: - getCurrentDate
     static func getCurrentDate() -> String {
         if let current = self.data?.current {
             return getDate(from: current.dt, with: " EEEE, MMM d, yyyy")
         }
         return ""
     }
-    
+
+    // MARK: - getCurrentData
     static func getCurrentData() -> (humidity: Int, temp: Double, windSpeed: Double ) {
         if let current = self.data?.current {
             return (current.humidity, current.temp, current.windSpeed)
         }
         return (0, 0, 0)
     }
-    
+
+    // MARK: - set(weatherData:)
     static func set(weatherData: Welcome) {
         self.data = weatherData
     }
-    
+
+    // MARK: - getDataTimeZone
     static func getDataTimeZone() -> String {
         return data.timezone
     }
-    
+
+    // MARK: - getDate
     private static func getDate(from date: Int, with format: String) -> String {
         let epocTime = TimeInterval(date)
         let myDate = Date(timeIntervalSince1970: epocTime)
@@ -40,37 +46,37 @@ struct OpenWeather {
         df.dateFormat = format
         return df.string(from: myDate)
     }
-        
-    //MARK: - Deily
+
+    // MARK: - Deily
     static func getDeily() -> [Daily] {
         self.data?.daily ?? [Daily]()
     }
-    
+
     static func getDeilyCount() -> Int {
         self.data?.daily.count ?? 0
     }
-    
+
     static func getDeilyDate(from index: Int) -> String {
         let daily = getDeily()
         let dt = daily[index].dt
         return getDate(from: dt, with: "E")
     }
-    
-    //MARK: - Hourly
+
+    // MARK: - Hourly
     static func getHourlyCount() -> Int {
         self.data?.hourly.count ?? 0
     }
-    
+
     static func getHourly() -> [Current] {
         self.data?.hourly ?? [Current]()
     }
-    
+
     static func getHourlyDate(from index: Int) -> String {
         let hourly = getHourly()
         let dt = hourly[index].dt
         return getDate(from: dt, with: " HH:mm")
     }
-        
+
     // MARK: - Welcome
     struct Welcome: Codable {
         let lat, lon: Double
@@ -134,7 +140,6 @@ struct OpenWeather {
         }
     }
 
-
     // MARK: - Weather
     struct Weather: Codable {
         let id: Int
@@ -164,7 +169,7 @@ struct OpenWeather {
         let clouds: Int
         let pop, uvi: Double
         let rain, snow: Double?
-        
+
         enum CodingKeys: String, CodingKey {
             case dt, sunrise, sunset, moonrise, moonset
             case moonPhase = "moon_phase"
@@ -189,7 +194,6 @@ struct OpenWeather {
         let day, min, max, night: Double
         let eve, morn: Double
     }
-
 
     // MARK: - WelcomeElement
     struct WelcomeElement: Codable {
@@ -229,5 +233,5 @@ struct OpenWeather {
             case fi, fr, gl, he, hi, hr, hu, id, it, ja, la, lt, mk, nl, no, pl, pt, ro, ru, sk, sl, sr, th, tr, vi, zu
         }
     }
-    
+
 }

@@ -28,6 +28,7 @@
 		B99E10A327BD4DB5000FE418 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99E10A127BD4DB5000FE418 /* TableCell.xib */; };
 		B99E10A527BE1DA0000FE418 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E10A427BE1D9F000FE418 /* FindViewController.swift */; };
 		B99E10A727BE38D2000FE418 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99E10A627BE38D2000FE418 /* MapViewController.swift */; };
+		B9DE8E1927C50CB30036BB2C /* Rapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DE8E1827C50CB30036BB2C /* Rapid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		B99E10A127BD4DB5000FE418 /* TableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		B99E10A427BE1D9F000FE418 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		B99E10A627BE38D2000FE418 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B9DE8E1827C50CB30036BB2C /* Rapid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rapid.swift; sourceTree = "<group>"; };
 		DBF4302574AB40B59E3189B9 /* Pods-iOS-Natif.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Natif.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Natif/Pods-iOS-Natif.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B90F3AAE27C2911400BC4653 /* OpenWeather.swift */,
+				B9DE8E1827C50CB30036BB2C /* Rapid.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				B90F3AC227C37E9300BC4653 /* MapСoordinatesDelegate.swift in Sources */,
 				B99E108727BD086D000FE418 /* AppDelegate.swift in Sources */,
 				B99E109B27BD0B33000FE418 /* OpenWeatherApi.swift in Sources */,
+				B9DE8E1927C50CB30036BB2C /* Rapid.swift in Sources */,
 				B99E108927BD086D000FE418 /* SceneDelegate.swift in Sources */,
 				B90F3AB627C2B69E00BC4653 /* CollectionView.swift in Sources */,
 				B90F3ACE27C3EFB300BC4653 /* RapidApi.swift in Sources */,

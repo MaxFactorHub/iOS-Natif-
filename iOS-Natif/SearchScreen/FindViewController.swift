@@ -8,7 +8,7 @@
 import UIKit
 
 class FindViewController: UIViewController  {
-        
+
     // MARK: - Variables
     @IBOutlet private weak var resultTable: UITableView!
     private let searchBar = UISearchBar()
@@ -23,29 +23,30 @@ class FindViewController: UIViewController  {
                 OpenWeatherApi.getCoordinates(by: selectedPositions?.ty ?? "") { welcomeElement in
                     self.delegate?.getCoordinates(latitude: welcomeElement.lat, longitude: welcomeElement.lon)
                     self.delegate?.updateCoordinates()
-                    
                 }
             }
         }
         addAlert(message: "Data has been sent to the Home Screen")
     }
-    
+
+    // MARK: - addAlert
     private func addAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay!", style: .destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         resultTable.dataSource = self
         resultTable.delegate = self
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_search"), style: .done, target: self, action: #selector(self.loadCoordinates))
+        let image = UIImage(named: "ic_search")
+        let selector = #selector(self.loadCoordinates)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: selector)
         self.navigationItem.titleView = searchBar
-        
+
         navigationItem.backBarButtonItem?.tintColor = .white
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.leftBarButtonItem?.tintColor = .white
@@ -54,18 +55,18 @@ class FindViewController: UIViewController  {
         searchBar.searchTextField.tintColor = .black
         searchBar.searchTextField.placeholder = "Строка поиска"
         searchBar.searchTextField.leftView = nil
-        let message = "Используйте панель поиска.\nПосле введения необходимой локации нажмите rightBarButtonItem для отправки данных на Главный экран. Кириллица в панели поиска не работает."
+        let message = "Используйте панель поиска.\nПосле введения необходимой локации нажмите rightBarButtonItem для отправки данных на Главный экран. Кириллица в панели поиска корректно не работает."
         addAlert(message: message)
     }
 }
 
 // MARK: - UITableViewDataSource
 extension FindViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return detectedPositions.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         var content = cell.defaultContentConfiguration()
@@ -78,7 +79,7 @@ extension FindViewController: UITableViewDataSource, UITableViewDelegate {
         cell.contentConfiguration = content
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let ty = detectedPositions[indexPath.row].ty
         let ry = detectedPositions[indexPath.row].ry
@@ -87,20 +88,19 @@ extension FindViewController: UITableViewDataSource, UITableViewDelegate {
         resultTable.reloadData()
     }
 }
- 
+
 // MARK: - UISearchBarDelegate
 extension FindViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
             selectedPositions = (searchText, "")
-            RapidApi.sendReq(with: searchText, completion: { welcome in
+            RapidApi.requestWithDelayControl(with: searchText, completion: { welcome in
                 self.detectedPositions.removeAll()
                 if let data = welcome.data {
                     for item in data {
                         self.detectedPositions.append((item.name, item.country))
                     }
                 }
-                
                 DispatchQueue.main.async { self.resultTable.reloadData() }
             })
             resultTable.reloadData()

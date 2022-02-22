@@ -8,7 +8,7 @@
 import UIKit
 
 class MainView: UIView {
-        
+
     func navigationItemsInstallation1() -> UIButton {
         let leftButton = UIButton(type: .system)
         leftButton.tintColor = .white
@@ -20,9 +20,10 @@ class MainView: UIView {
         leftButton.contentHorizontalAlignment = .left
         return leftButton
     }
-    
+
     func navigationItemsInstallation2() -> UIBarButtonItem {
-        let rightButton = UIBarButtonItem(image: UIImage(named: "ic_my_location"), style: .done, target: nil, action: nil)
+        let image = UIImage(named: "ic_my_location")
+        let rightButton = UIBarButtonItem(image: image, style: .done, target: nil, action: nil)
         rightButton.tintColor = .white
         return rightButton
     }

@@ -8,36 +8,36 @@
 import Foundation
 
 class OpenWeatherApi {
-    
-    static func getWeather(latitude: Double , longitude: Double, completion: @escaping ((OpenWeather.Welcome) -> Void)) {
+
+    private static let appid = "&appid=89e23deae336979d0c48c441eaf36fdb"
+    private static let domain = "https://api.openweathermap.org/"
+
+    static func getWeather(latitude: Double, longitude: Double, completion: @escaping ((OpenWeather.Welcome?) -> Void)) {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
-            let url = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&units=metric&exclude=minutely,alerts&appid=89e23deae336979d0c48c441eaf36fdb")!
-            let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-                guard let data = data else { print("error"); return }
-                let value = try! JSONDecoder().decode(OpenWeather.Welcome.self, from: data)
-                
-                print("Load weather")
-                print(value.lat)
-                print(value.lon)
+            let parameters = "data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&units=metric&exclude=minutely,alerts"
+            let stringUrl = domain + parameters + appid
+            let url = URL(string: stringUrl)!
+            let task = URLSession.shared.dataTask(with: url) {(data, _, _) in
+                guard let data = data else { return }
+                let value = try? JSONDecoder().decode(OpenWeather.Welcome.self, from: data)
                 completion(value)
             }
             task.resume()
         }
     }
 
-    static func getCoordinates(by location_name: String , completion: @escaping ((OpenWeather.WelcomeElement) -> Void)) {
+    static func getCoordinates(by locationName: String, completion: @escaping ((OpenWeather.WelcomeElement) -> Void)) {
         let queue = DispatchQueue.global(qos: .utility)
         queue.async {
-            let string_url = "https://api.openweathermap.org/geo/1.0/direct?q=\(location_name)&limit=1&appid=89e23deae336979d0c48c441eaf36fdb".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
-            let url = URL(string: string_url)!
-            let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-                guard let data = data else { print("error"); return }
-                let value = try! JSONDecoder().decode([OpenWeather.WelcomeElement].self, from: data)
-                print(value.first?.state)
-                print(value.first?.country)
-                print(value.first?.name)
-                completion(value.first!)
+            var stringUrl = domain + "geo/1.0/direct?q=\(locationName)&limit=1" + appid
+            stringUrl = stringUrl.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+            let url = URL(string: stringUrl)!
+            let task = URLSession.shared.dataTask(with: url) {(data, _, _) in
+                guard let welcomeElement = data else { return }
+                if let location = try? JSONDecoder().decode([OpenWeather.WelcomeElement].self, from: welcomeElement).first {
+                    completion(location)
+                }
             }
             task.resume()
         }

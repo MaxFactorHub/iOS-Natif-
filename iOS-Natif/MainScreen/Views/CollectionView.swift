@@ -13,9 +13,9 @@ class CollectionView: UICollectionView {
         let nib = UINib(nibName: "CollectionCell", bundle: nil)
         register(nib, forCellWithReuseIdentifier: "CollectionCell")
     }
-    
+
     func getСonfiguredCell(for indexPath: IndexPath) -> CollectionCell {
         dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
     }
-    
+
 }

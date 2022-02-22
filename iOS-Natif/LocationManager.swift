@@ -9,9 +9,9 @@ import Foundation
 import CoreLocation
 
 class LocationManager {
-    
+
     private static var locationManager = CLLocationManager()
-        
+
     static func locationManagerSettings() {
         if CLLocationManager.locationServicesEnabled() == true {
             locationManager.requestAlwaysAuthorization()
@@ -23,20 +23,20 @@ class LocationManager {
             fatalError()
         }
     }
-    
+
     static func set(delegate: CLLocationManagerDelegate) {
         self.locationManager.delegate = delegate
     }
-    
+
     static func stopUpdatingLocation() {
         self.locationManager.stopUpdatingLocation()
     }
-    
+
     static func getCoordinate() -> CLLocationCoordinate2D? {
         guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return nil }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         return locValue
     }
-    
+
     private init() {}
 }
