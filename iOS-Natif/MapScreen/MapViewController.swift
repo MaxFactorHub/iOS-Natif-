@@ -11,6 +11,12 @@ import MapKit
 
 class MapViewController: UIViewController {
     
+    private func addAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay!", style: .destructive, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Variables
     private var touchCoordinates: (latitude: CLLocationDegrees, longitude: CLLocationDegrees)?
     @IBOutlet private weak var mapView: MKMapView!
@@ -24,6 +30,7 @@ class MapViewController: UIViewController {
             let coordinates = getMapCoordinates(from: touchPoint)
                 updateAnnotationCoordinates(latitude: coordinates.latitude, longitude: coordinates.longitude)
                 delegate?.getCoordinates(latitude: coordinates.latitude, longitude: coordinates.longitude)
+            addAlert(message: "Data has been sent to the Home Screen")
         }
     }
     
@@ -70,6 +77,8 @@ class MapViewController: UIViewController {
         LocationManager.locationManagerSettings()
         navigationController?.navigationBar.barTintColor = .white
         navigationItem.backBarButtonItem?.tintColor = .white
+        let message = "Use UILongPressGestureRecognizer\nminimumPressDuration = 1"
+        addAlert(message: message)
     }
         
     // MARK: - viewWillDisappear

@@ -67,6 +67,8 @@ class ViewController: UIViewController {
         rightBarButtonItem.target = self
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
+        navigationItem.backButtonDisplayMode = .minimal
+        
         collectionView.dataSource = self
         tableView.dataSource = self
         tableView.delegate = self
